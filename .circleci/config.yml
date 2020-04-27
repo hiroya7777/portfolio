@@ -9,7 +9,6 @@ jobs:
       - image: circleci/php:latest
       - image: circleci/mysql:latest
         command: mysqld --default-authentication-plugin=mysql_native_password
-
       environment:
       - APP_DEBUG: true
       - APP_ENV: testing
