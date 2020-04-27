@@ -10,6 +10,7 @@ jobs:
       - APP_ENV: testing
       - APP_KEY: base64:b9X6tf/W5d9JHQ1y28Gk43pJ61Td2vatrj/1WK6xc28=
       - DB_CONNECTION: circle_test
+      - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     working_directory: ~/app
 
