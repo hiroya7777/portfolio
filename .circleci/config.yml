@@ -5,13 +5,15 @@ jobs:
       - image: circleci/php:latest
       - image: circleci/mysql:latest
         command: mysqld --default-authentication-plugin=mysql_native_password
-    environment:
+
+      environment:
       - APP_DEBUG: true
       - APP_ENV: testing
-      - APP_KEY: base64:Xj7TuHgNI2WTfPCmlH3YgXnJOgRP3Svdj7uP+ArXNMY=
-      - DB_CONNECTION: circleci
+      - APP_KEY: base64:b9X6tf/W5d9JHQ1y28Gk43pJ61Td2vatrj/1WK6xc28=
+      - DB_CONNECTION: circle_test
+      - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
-    working_directory: ~/Bicycle-parking-lot
+    working_directory: ~/app
 
     steps:
       - checkout
@@ -28,7 +30,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Bicycle-parking-lot/composer.json" }}
+            - v1-dependencies-{{ checksum "app/composer.json" }}
             - v1-dependencies-
 
       # - run:
@@ -38,7 +40,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor
-          key: v1-dependencies-{{ checksum "Bicycle-parking-lot/composer.json" }}
+          key: v1-dependencies-{{ checksum "app/composer.json" }}
 
       - run:
           name: Wait for db
