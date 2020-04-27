@@ -32,8 +32,8 @@ jobs:
             - v1-dependencies-
 
       # - run:
-      #     name: composer install
-      #     command: composer install -n --prefer-dist
+          name: composer install
+          command: composer install -n --prefer-dist
 
       - save_cache:
           paths:
@@ -45,5 +45,5 @@ jobs:
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
 
       # - run:
-          name: Migration & Seeding
-          command: php artisan migrate --seed
+      #     name: Migration & Seeding
+      #     command: php artisan migrate --seed
