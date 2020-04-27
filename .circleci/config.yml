@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/php:7.2.1-apache-node-browser
+      - image: circleci/php:7.2
       - image: circleci/mysql:latest
 
       environment:
