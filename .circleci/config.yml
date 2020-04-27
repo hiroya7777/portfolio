@@ -45,6 +45,7 @@ jobs:
           name: Wait for db
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
 
+      # run seeding
       - run: php artisan migrate
       - run: php artisan db:seed
 
