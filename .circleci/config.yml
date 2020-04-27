@@ -45,5 +45,5 @@ jobs:
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
 
       # - run:
-      #     name: Migration & Seeding
-      #     command: php artisan migrate --seed
+          name: Migration & Seeding
+          command: php artisan migrate --seed
