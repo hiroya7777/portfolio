@@ -8,12 +8,14 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.3-node-browsers
+      - image: circleci/mysql:latest
 
       environment:
       - APP_DEBUG: true
       - APP_ENV: testing
       - APP_KEY: base64:b9X6tf/W5d9JHQ1y28Gk43pJ61Td2vatrj/1WK6xc28=
-      - DB_CONNECTION: circleci
+      - DB_CONNECTION: circle_test
+      - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
