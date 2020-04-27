@@ -28,7 +28,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Bicycle-parking-lot/composer.json" }}
+            - v1-dependencies-{{ checksum "app/composer.json" }}
             - v1-dependencies-
 
       # - run:
@@ -38,7 +38,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor
-          key: v1-dependencies-{{ checksum "Bicycle-parking-lot/composer.json" }}
+          key: v1-dependencies-{{ checksum "app/composer.json" }}
 
       - run:
           name: Wait for db
