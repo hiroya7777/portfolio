@@ -8,8 +8,8 @@ jobs:
     environment:
       - APP_DEBUG: true
       - APP_ENV: testing
-      - APP_KEY: base64:Xj7TuHgNI2WTfPCmlH3YgXnJOgRP3Svdj7uP+ArXNMY=
-      - DB_CONNECTION: circleci
+      - APP_KEY: base64:b9X6tf/W5d9JHQ1y28Gk43pJ61Td2vatrj/1WK6xc28=
+      - DB_CONNECTION: circle_test
 
     working_directory: ~/app
 
