@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/php:latest
-      - image: circleci/mysql:5.8
+      - image: circleci/mysql:latest
         command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       - APP_DEBUG: true
