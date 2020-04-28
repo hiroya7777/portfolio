@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stock extends Model
+class Cart extends Model
 {
     /**
      * モデルと関連しているテーブル
      *
      * @var string
      */
-    protected $table = 'stocks';
+    protected $table = 'carts';
 
-    protected $guarded = [
-        'id'
+    protected $follable = [
+        'stock_id',
+        'cart_id'
     ];
 }
