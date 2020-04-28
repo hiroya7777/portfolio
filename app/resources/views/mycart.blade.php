@@ -2,28 +2,27 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="">
-        <div class="mx-auto" style="max-width:1200px">
-            <h1 style="color:#555555; text-align:center; font-size:1.2em; padding:24px 0px; font-weight:bold;">カート一覧</h1>
-            <div class="">
-                <div class="d-flex flex-row flex-wrap">
-                    カート覧を出したい
+   <div class="">
+       <div class="mx-auto" style="max-width:1200px">
+           <h1 class="text-center font-weight-bold" style="color:#555555;  font-size:1.2em; padding:24px 0px;">
+           {{ Auth::user()->name }}さんのカートの中身</h1>
 
-                {{-- 追加 --}}
+           <div class="">
+               <p class="text-center">{{ $message }}</p><br>
+               <div class="d-flex flex-row flex-wrap">
 
-                    @foreach($stocks as $stock)
-                        {{$stock->name}} <br>
-                        {{$stock->fee}}円<br>
-                        <img src="/image/{{$stock->imgpath}}" alt="" class="incart" >
-                        <br>
-                        {{$stock->detail}} <br>
-                    @endforeach
-                    {{$stocks->links()}}
+                   @foreach($myCarts as $myCart)
+                       <div class="mycart_box">
+                           <p>ユーザーID：{{$myCart->user_id}}</p>
+                           <p>ストックID：{{$myCart->stock_id}}</p>
+                       <>/div
+                   @endforeach
 
-                    {{-- ここまで --}}
-                </div>
-            </div>
-        </div>
-    </div>
+               </div>
+
+               <a href="/">商品一覧へ</a>
+           </div>
+       </div>
+   </div>
 </div>
 @endsection
