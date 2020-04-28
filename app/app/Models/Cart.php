@@ -13,7 +13,7 @@ class Cart extends Model
      */
     protected $table = 'carts';
 
-    protected $follable = [
+    protected $fillable = [
         'stock_id',
         'cart_id'
     ];
