@@ -12,5 +12,7 @@
 */
 
 Route::get('/', 'ShopController@index');
+Route::get('/mycart', 'ShopController@myCart');
+Route::post('/mycart', 'ShopController@addMycart');
 
 Auth::routes();
