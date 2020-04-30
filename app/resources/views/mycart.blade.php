@@ -8,14 +8,14 @@
            {{ Auth::user()->name }}さんのカートの中身</h1>
 
            <div class="">
-               <p class="text-center">{{ $message }}</p><br>
+               <p class="text-center">{{ $message ?? '' }}</p><br>
                <div class="d-flex flex-row flex-wrap">
 
                    @foreach($myCarts as $myCart)
                        <div class="mycart_box">
                            <p>ユーザーID：{{$myCart->user_id}}</p>
                            <p>ストックID：{{$myCart->stock_id}}</p>
-                       <>/div
+                       </div>
                    @endforeach
 
                </div>
