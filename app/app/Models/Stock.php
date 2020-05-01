@@ -12,4 +12,8 @@ class Stock extends Model
      * @var string
      */
     protected $table = 'stocks';
+
+    protected $guarded = [
+        'id'
+    ];
 }

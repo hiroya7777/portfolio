@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ShopController@index');
+Route::get('/mycart', 'ShopController@myCart');
+Route::post('/mycart', 'ShopController@addMycart');
+Route::post('/cartdelete', 'ShopController@deleteCart');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
