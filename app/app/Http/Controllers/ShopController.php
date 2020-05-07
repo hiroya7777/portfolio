@@ -45,4 +45,10 @@ class ShopController extends Controller
         $data = $cart->showCart();
         return view('mycart', $data)->with('message',$message);
     }
+
+    public function checkout(Cart $cart)
+    {
+        $checkoutInfo = $cart->checkoutCart();
+        return view('checkout');
+    }
 }
