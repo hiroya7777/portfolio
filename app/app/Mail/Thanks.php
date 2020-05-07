@@ -16,9 +16,9 @@ class Thanks extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($mailData)
     {
-        //
+        $this->mailData = $mailData;
     }
 
     /**
@@ -28,6 +28,7 @@ class Thanks extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.thanks');
+        return $this->markdown('mails.thanks', $this->mailData)
+                    ->subject('Larashopでのご購入ありがとうございます');
     }
 }
