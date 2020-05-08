@@ -68,4 +68,13 @@ class Cart extends Model
         }
         return $message;
     }
+
+    public function checkoutCart()
+    {
+        $userId = Auth::id();
+        $checkoutItems = $this->where('user_id', $userId)->get();
+        $this->where('user_id', $userId)->delete();
+
+        return $checkoutItems;
+    }
 }
