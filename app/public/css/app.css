@@ -2911,6 +2911,30 @@ fieldset:disabled a.btn {
   border-color: #c51f1a;
 }
 
+.btn-hover {
+  color: #fff;
+  background-color: #00FF33;
+  border-color: #00FF33;
+}
+
+.btn-hover:hover {
+  color: #fff;
+  background-color: #00FF33;
+  border-color: #00FF33;
+}
+
+.btn-back-hover {
+  color: #fff;
+  background-color: #FF9900;
+  border-color: #FF9900;
+}
+
+.btn-back-hover:hover {
+  color: #fff;
+  background-color: #FF9900;
+  border-color: #FF9900;
+}
+
 .btn-danger:focus,
 .btn-danger.focus {
   color: #fff;
@@ -10895,11 +10919,29 @@ img.incart {
      object-fit: cover;
 }
 
+img.indetail {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  height: 340px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .mycart_box {
   color: #4c4c4c;
   font-weight: bold;
   text-align: center;
   margin-top: 24px;
+  padding: 24px 8px;
+  font-size: 1.1em;
+  background-color: #fefefe;
+}
+
+.detail_box {
+  color: #4c4c4c;
+  font-weight: bold;
+  text-align: center;
   padding: 24px 8px;
   font-size: 1.1em;
   background-color: #fefefe;
@@ -10928,3 +10970,16 @@ img.incart {
   margin: 20px auto;
 }
 
+.cart-btn {
+  margin: 40px auto 60px;
+  width: 200px;
+  display: block;
+  background-color: #00FFFF;
+}
+
+.back-btn {
+  margin: 40px auto 60px;
+  width: 200px;
+  display: block;
+  background-color: #FFCC00;
+}
