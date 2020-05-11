@@ -17,6 +17,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/cartdelete', 'ShopController@deleteCart');
     Route::post('/checkout', 'ShopController@checkout');
     Route::get('/detail/{id}', 'ShopController@show');
+    Route::post('/detail/{id}', 'ShopController@addMycart');
 });
 
 Route::get('/', 'ShopController@index');

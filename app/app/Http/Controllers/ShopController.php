@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Mail;
 
 class ShopController extends Controller
 {
-    public function __construct()
+    protected $stock;
+
+    public function __construct(Stock $stock)
     {
         $this->middleware('auth');
+        $this->stock = $stock;
     }
 
     public function index()
@@ -55,5 +58,12 @@ class ShopController extends Controller
         $mailData['checkoutItems'] = $cart->checkoutCart();
         Mail::to($user->email)->send(new Thanks($mailData));
         return view('checkout');
+    }
+
+    public function show(Request $request, Stock $stock)
+    {
+        $stockId = $request->id;
+        $stock = $this->stock->find($stockId);
+        return view('detail', compact('stock'));
     }
 }
