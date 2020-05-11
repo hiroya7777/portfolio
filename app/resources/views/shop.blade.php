@@ -18,11 +18,9 @@
                                     <br>
                                     {{$stock->detail}} <br>
                                     <br>
-                                    <form action="detail" method="get">
-                                        <a href="{{ url('/detail') }}" >
-                                            <input type="hidden" name="stock_id" value="{{ $stock->id }}">
-                                            <input type="submit" value="商品詳細へ">
-                                        </a>
+                                    <form action="/detail/{id}" method="get">
+                                        <input type="hidden" name="stock_id" value="{{ $stock->id }}">
+                                        <input type="submit" value="商品詳細へ">
                                     </form>
                                     <br>
                                     <form action="mycart" method="post">
