@@ -62,7 +62,7 @@ class ShopController extends Controller
 
     public function show(Request $request, Stock $stock)
     {
-        $stockId = $request->id;
+        $stockId = $request->stock_id;
         $stock = $this->stock->find($stockId);
         return view('detail', compact('stock'));
     }
